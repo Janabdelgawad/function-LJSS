@@ -1,12 +1,15 @@
-// Grab the welcome-el paragraph and store it in a variable called welcomeEl
+let saveEl = document.getElementById("save-el")
+let countEl = document.getElementById("count-el")
+let count = 0
 
-// Create two variables (name & greeting) that contains your name
-// and the greeting we want to render on the page
+function increment() {
+    count += 1
+    countEl.textContent = count
+}
 
-// Render the welcome message using welcomeEl.innerText
-
-let welcomeEl = document.getElementById("welcome-el")
-let myName = "jana"
-let greeting = "Welcome back "
-welcomeEl.innerText = greeting + myName
-
+function save() {
+    let countStr = count + " - "
+    saveEl.textContent += countStr
+    countEl.textContent = 0
+    count = 0
+}
